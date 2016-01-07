@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="http://api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU"></script>
+    <title>My first Web project</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+<div id="map" style="width: 400px; height: 300px"></div>
+<label for="latitude">Latitude:</label>
+<input type="text" id="latitude" value="45.5222358"/><br/>
+<label for="longitude">Longitude:</label>
+<input type="text" id="longitude" value="-122.855096"/><br/>
+<input type="submit" value="Show map" onclick=" showMap(document.getElementById('latitude').value,document.getElementById('longitude').value);"/>
+<script type="text/javascript">
+    function showMap (latitude, longitude) {
+        var myMap;
+        myMap = new ymaps.Map('map', {
+            center: [latitude, longitude],
+            zoom: 16
+        });
+    }
+</script>
+</body>
+
+</html>
